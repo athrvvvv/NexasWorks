@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refund & Cancellation Policy - NexasWorks</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { 50: '#f0f9ff', 100: '#e0f2fe', 400: '#38bdf8', 500: '#0ea5e9', 600: '#0284c7', 900: '#0c4a6e' },
+                        dark: { bg: '#020617', card: '#0f172a', border: '#1e293b' }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark-bg text-slate-300 font-sans antialiased flex flex-col min-h-screen selection:bg-brand-500 selection:text-white">
+    <header class="fixed w-full top-0 z-40 bg-dark-bg/80 backdrop-blur-md border-b border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="text-3xl font-extrabold text-white tracking-tight">Nexas<span class="text-brand-400">Works</span></a>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#services" class="text-slate-300 hover:text-white transition-colors">Services & Pricing</a>
+                    <a href="#work" class="text-slate-300 hover:text-white transition-colors">Our Work</a>
+                    <a href="contact.html" class="text-slate-300 hover:text-white transition-colors">Contact</a>
+                </nav>
+                <div class="hidden md:flex items-center">
+                    <a href="contact.html" class="bg-brand-500 hover:bg-brand-600 text-white px-6 py-2.5 rounded-full font-medium transition-all shadow-lg shadow-brand-500/30">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="flex-grow pt-32 pb-24">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-bold text-white mb-8 border-b border-dark-border pb-4">Refund & Cancellation Policy</h1>
+            <div class="prose prose-invert max-w-none space-y-6 text-slate-300 text-lg">
+                
+            <div class="bg-brand-900/30 border-l-4 border-brand-500 p-4 rounded mb-6 text-white font-medium">
+                Refunds are only processed before the project commences, and no refunds are issued for completed web development milestones.
+            
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark-bg border-t border-dark-border pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <a href="#" class="text-3xl font-extrabold text-white tracking-tight block mb-4">Nexas<span class="text-brand-400">Works</span></a>
+                    <p class="text-slate-400 mb-6">Your dedicated partner in architecting robust, scalable, and beautiful web experiences.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-slate-400 hover:text-brand-400 transition-colors">Services & Pricing</a></li>
+                        <li><a href="contact.html" class="text-slate-400 hover:text-brand-400 transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Legal Policies</h4>
+                    <ul class="space-y-2">
+                        <li><a href="terms.html" class="text-slate-400 hover:text-brand-400 transition-colors">Terms & Conditions</a></li>
+                        <li><a href="privacy.html" class="text-slate-400 hover:text-brand-400 transition-colors">Privacy Policy</a></li>
+                        <li><a href="refund.html" class="text-slate-400 hover:text-brand-400 transition-colors">Refund & Cancellation Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-dark-border pt-8 flex flex-col md:flex-row justify-between items-center text-slate-500 text-sm">
+                <p>&copy; 2026 NexasWorks. All rights reserved.</p>
+                <p class="mt-2 md:mt-0">Khopoli, Maharashtra, India</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
