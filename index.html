@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexasWorks - Premier Digital Web Agency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            900: '#0c4a6e',
+                        },
+                        dark: {
+                            bg: '#020617',
+                            card: '#0f172a',
+                            border: '#1e293b'
+                        }
+                    }
+                }
+            }
+        }
+
+    </script>
+
+    <style>
+        /* Dialog specific styling */
+        dialog {
+            background: transparent;
+            max-width: 90vw;
+            width: 100%;
+        }
+        dialog::backdrop {
+            background-color: rgba(2, 6, 23, 0.85);
+            backdrop-filter: blur(6px);
+        }
+        /* Open state animations */
+        dialog[open] {
+            animation: show 0.3s ease normal;
+        }
+        @keyframes show {
+            from {
+                opacity: 0;
+                transform: translateY(-20px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Smooth Scroll Reveal Animations */
+        html { scroll-behavior: smooth; }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 100ms; }
+        .reveal-delay-2 { transition-delay: 200ms; }
+        .reveal-delay-3 { transition-delay: 300ms; }
+    </style>
+
+</head>
+<body class="bg-dark-bg text-slate-300 font-sans antialiased flex flex-col min-h-screen selection:bg-brand-500 selection:text-white">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-40 bg-dark-bg/80 backdrop-blur-md border-b border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-3xl font-extrabold text-white tracking-tight">Nexas<span class="text-brand-400">Works</span></a>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#services" class="text-slate-300 hover:text-white transition-colors">Services & Pricing</a>
+                    <a href="#work" class="text-slate-300 hover:text-white transition-colors">Our Work</a>
+                    <button onclick="document.getElementById('contact-modal').showModal()" class="text-slate-300 hover:text-white transition-colors">Contact</button>
+                </nav>
+                <div class="hidden md:flex items-center">
+                    <button onclick="document.getElementById('contact-modal').showModal()" class="bg-brand-500 hover:bg-brand-600 text-white px-6 py-2.5 rounded-full font-medium transition-all shadow-lg shadow-brand-500/30">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-20">
+        <!-- Hero Section -->
+        <section class="relative pt-24 pb-32 overflow-hidden">
+            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')] bg-cover bg-center opacity-10"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-dark-bg via-transparent to-dark-bg"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <h1 class="reveal text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-8">
+                    Crafting Digital <br/> <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-blue-600">Masterpieces</span>
+                </h1>
+                <p class="reveal reveal-delay-1 mt-4 text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto mb-10">
+                    NexasWorks is your premier agency for stunning, high-performance web solutions. We transform ideas into impactful digital realities.
+                </p>
+                <div class="reveal reveal-delay-2 flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#services" class="bg-brand-500 hover:bg-brand-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg shadow-brand-500/30 inline-flex justify-center items-center">View Packages</a>
+                    <button onclick="document.getElementById('contact-modal').showModal()" class="bg-dark-card border border-dark-border hover:border-brand-400 text-white px-8 py-4 rounded-full font-bold text-lg transition-all inline-flex justify-center items-center">Book a Consultation</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Work Section -->
+        <section id="work" class="py-24 bg-dark-card border-t border-dark-border">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-white mb-4">Our Open Source Contributions</h2>
+                    <p class="text-lg text-slate-400">Pioneering powerful tools for the developer community worldwide.</p>
+                </div>
+                
+                <div class="max-w-4xl mx-auto">
+                    <!-- AppOpener Showcase -->
+                    <div class="group relative rounded-3xl overflow-hidden bg-dark-bg border-2 border-brand-500/30 hover:border-brand-500 transition-all shadow-2xl shadow-brand-500/10">
+                        <div class="flex flex-col md:flex-row">
+                            <div class="md:w-2/5 bg-gradient-to-br from-brand-900 to-dark-bg p-8 flex flex-col justify-center border-b md:border-b-0 md:border-r border-dark-border">
+                                <div class="bg-dark-card/50 p-4 rounded-xl inline-block w-max mb-6 border border-brand-500/30">
+                                    <svg class="w-12 h-12 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                                </div>
+                                <h3 class="text-3xl font-extrabold text-white mb-2 tracking-tight">AppOpener</h3>
+                                <p class="text-brand-400 font-medium mb-1">Open Source Python Package</p>
+                                <div class="mt-4 flex gap-2">
+                                    <span class="px-3 py-1 bg-brand-500/20 text-brand-300 text-xs font-bold rounded-full border border-brand-500/40">Python</span>
+                                    <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs font-bold rounded-full border border-slate-600">Cross-Platform</span>
+                                </div>
+                            </div>
+                            <div class="md:w-3/5 p-8 lg:p-10 flex flex-col justify-center">
+                                <p class="text-slate-300 text-lg mb-6 leading-relaxed">
+                                    A highly popular, widely-adopted Python library authored by our founder. <strong>AppOpener</strong> allows developers and power users to open or close any installed application on their system without requiring absolute file paths.
+                                </p>
+                                <ul class="space-y-3 mb-8 text-slate-400">
+                                    <li class="flex items-start">
+                                        <svg class="w-6 h-6 text-brand-400 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                        Simplifies application launching and termination natively.
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-6 h-6 text-brand-400 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                        Supports partial matches & closest name detection.
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-6 h-6 text-brand-400 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                        Used by thousands of developers globally via PyPI.
+                                    </li>
+                                </ul>
+                                <div class="flex gap-4">
+                                    <a href="https://pypi.org/project/appopener/" target="_blank" rel="noopener noreferrer" class="bg-brand-500 hover:bg-brand-600 text-white px-6 py-2.5 rounded-xl font-medium transition-all shadow-lg shadow-brand-500/25 inline-flex items-center">
+                                        View on PyPI
+                                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services & Pricing Section -->
+        <section id="services" class="py-24 bg-dark-bg border-t border-dark-border">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-white mb-4">Pricing & Services</h2>
+                    <p class="text-lg text-slate-400">Transparent pricing strictly in INR for top-tier digital web development.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Starter Package -->
+                    <div class="bg-dark-card border border-dark-border rounded-2xl p-8 hover:border-brand-500 transition-all group flex flex-col">
+                        <div class="mb-6">
+                            <span class="inline-block px-3 py-1 rounded-full bg-brand-900/50 text-brand-400 text-sm font-semibold tracking-wide border border-brand-900 mb-4">ESSENTIAL</span>
+                            <h3 class="text-2xl font-bold text-white mb-2">Starter Landing Page</h3>
+                            <p class="text-slate-400 h-12">Perfect for new businesses needing a strong single-page presence.</p>
+                        </div>
+                        <div class="mb-8">
+                            <span class="text-4xl font-extrabold text-white">₹14,999</span>
+                        </div>
+                        <ul class="space-y-4 mb-8 flex-grow text-slate-300">
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-brand-400 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Single Page Modern Design
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-brand-400 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Mobile Responsive
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-brand-400 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Basic SEO Setup
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-brand-400 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Contact Form Integration
+                            </li>
+                        </ul>
+                        <button onclick="document.getElementById('contact-modal').showModal()" class="w-full bg-dark-bg border border-dark-border group-hover:bg-brand-500 group-hover:border-brand-500 text-white px-4 py-3 rounded-xl font-medium transition-all">Select Package</button>
+                    </div>
+
+                    <!-- Custom Business Package -->
+                    <div class="bg-dark-card border-2 border-brand-500 rounded-2xl p-8 relative transform md:-translate-y-4 flex flex-col shadow-2xl shadow-brand-500/10">
+                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-brand-500 text-white px-4 py-1 rounded-full text-sm font-bold tracking-wider">MOST POPULAR</div>
+                        <div class="mb-6">
+                            <span class="inline-block px-3 py-1 rounded-full bg-brand-900/50 text-brand-400 text-sm font-semibold tracking-wide border border-brand-900 mb-4">PROFESSIONAL</span>
+                            <h3 class="text-2xl font-bold text-white mb-2">Custom Business Website</h3>
+                            <p class="text-slate-400 h-12">Comprehensive multi-page website tailored to your brand identity.</p>
+                        </div>
+                        <div class="mb-8">
+                            <span class="text-4xl font-extrabold text-white">₹29,999</span>
+                        </div>
+                        <ul class="space-y-4 mb-8 flex-grow text-slate-300">
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-brand-400 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Up to 5 Custom Pages
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-brand-400 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Premium UI/UX Design
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-brand-400 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Advanced SEO Optimization
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-brand-400 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                CMS Integration
+                            </li>
+                        </ul>
+                        <button onclick="document.getElementById('contact-modal').showModal()" class="w-full bg-brand-500 hover:bg-brand-600 text-white px-4 py-3 rounded-xl font-medium transition-all shadow-lg shadow-brand-500/25">Select Package</button>
+                    </div>
+
+                    <!-- E-Commerce Package -->
+                    <div class="bg-dark-card border border-dark-border rounded-2xl p-8 hover:border-brand-500 transition-all group flex flex-col">
+                        <div class="mb-6">
+                            <span class="inline-block px-3 py-1 rounded-full bg-brand-900/50 text-brand-400 text-sm font-semibold tracking-wide border border-brand-900 mb-4">ENTERPRISE</span>
+                            <h3 class="text-2xl font-bold text-white mb-2">E-commerce Setup</h3>
+                            <p class="text-slate-400 h-12">Full-scale online store ready to process transactions securely.</p>
+                        </div>
+                        <div class="mb-8">
+                            <span class="text-4xl font-extrabold text-white">₹49,999</span>
+                        </div>
+                        <ul class="space-y-4 mb-8 flex-grow text-slate-300">
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-brand-400 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Complete Storefront Design
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-brand-400 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Secure Payment Gateways
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-brand-400 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Product & Inventory Management
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-brand-400 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Sales Analytics Dashboard
+                            </li>
+                        </ul>
+                        <button onclick="document.getElementById('contact-modal').showModal()" class="w-full bg-dark-bg border border-dark-border group-hover:bg-brand-500 group-hover:border-brand-500 text-white px-4 py-3 rounded-xl font-medium transition-all">Select Package</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA Section -->
+        <section class="py-20 bg-brand-900 border-y border-brand-500/20">
+            <div class="max-w-4xl mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to elevate your digital presence?</h2>
+                <p class="text-brand-100 text-lg mb-8">Join the growing list of successful brands built by NexasWorks.</p>
+                <button onclick="document.getElementById('contact-modal').showModal()" class="bg-white text-brand-900 hover:bg-brand-50 px-8 py-4 rounded-full font-bold text-lg transition-all shadow-xl">Start Your Project Today</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark-bg border-t border-dark-border pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <a href="#" class="text-3xl font-extrabold text-white tracking-tight block mb-4">Nexas<span class="text-brand-400">Works</span></a>
+                    <p class="text-slate-400 mb-6">Your dedicated partner in architecting robust, scalable, and beautiful web experiences.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-slate-400 hover:text-brand-400 transition-colors">Services & Pricing</a></li>
+                        <li><button onclick="document.getElementById('contact-modal').showModal()" class="text-slate-400 hover:text-brand-400 transition-colors">Contact Us</button></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Legal Policies</h4>
+                    <ul class="space-y-2">
+                        <li><button onclick="document.getElementById('terms-modal').showModal()" class="text-slate-400 hover:text-brand-400 transition-colors">Terms & Conditions</button></li>
+                        <li><button onclick="document.getElementById('privacy-modal').showModal()" class="text-slate-400 hover:text-brand-400 transition-colors">Privacy Policy</button></li>
+                        <li><button onclick="document.getElementById('refund-modal').showModal()" class="text-slate-400 hover:text-brand-400 transition-colors">Refund & Cancellation Policy</button></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-dark-border pt-8 flex flex-col md:flex-row justify-between items-center text-slate-500 text-sm">
+                <p>&copy; 2026 NexasWorks. All rights reserved.</p>
+                <p class="mt-2 md:mt-0">Khopoli, Maharashtra, India</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+
+    <!-- Contact Us Modal -->
+    <dialog id="contact-modal" closedby="any" aria-labelledby="contact-title" class="bg-dark-card border border-dark-border rounded-2xl shadow-2xl p-0 max-w-lg m-auto">
+        <div class="p-6 border-b border-dark-border flex justify-between items-center">
+            <h2 id="contact-title" class="text-2xl font-bold text-white">Contact Us</h2>
+            <form method="dialog">
+                <button type="submit" class="text-slate-400 hover:text-white transition-colors" aria-label="Close">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </form>
+        </div>
+        <div class="p-6 text-slate-300 space-y-6">
+            <p>Get in touch with NexasWorks to discuss your next big project. Our team is ready to assist you.</p>
+            
+            <div class="flex items-center">
+                <div class="bg-brand-900/50 p-3 rounded-full mr-4 text-brand-400 border border-brand-900">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                </div>
+                <div>
+                    <p class="text-sm text-slate-400">Email us at</p>
+                    <a href="mailto:atharvchaulkar2005@gmail.com" class="text-white font-medium hover:text-brand-400 transition-colors">atharvchaulkar2005@gmail.com</a>
+                </div>
+            </div>
+            
+            <div class="flex items-center">
+                <div class="bg-brand-900/50 p-3 rounded-full mr-4 text-brand-400 border border-brand-900">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                </div>
+                <div>
+                    <p class="text-sm text-slate-400">Headquarters</p>
+                    <p class="text-white font-medium">Khopoli, Maharashtra, India</p>
+                </div>
+            </div>
+        </div>
+        <div class="p-6 border-t border-dark-border bg-dark-bg/50 rounded-b-2xl flex justify-end">
+            <form method="dialog">
+                <button type="submit" class="bg-brand-500 hover:bg-brand-600 text-white px-6 py-2 rounded-lg font-medium transition-colors">Close</button>
+            </form>
+        </div>
+    </dialog>
+
+    <!-- Terms & Conditions Modal -->
+    <dialog id="terms-modal" closedby="any" aria-labelledby="terms-title" class="bg-dark-card border border-dark-border rounded-2xl shadow-2xl p-0 max-w-2xl m-auto">
+        <div class="p-6 border-b border-dark-border flex justify-between items-center sticky top-0 bg-dark-card rounded-t-2xl z-10">
+            <h2 id="terms-title" class="text-2xl font-bold text-white">Terms & Conditions</h2>
+            <form method="dialog">
+                <button type="submit" class="text-slate-400 hover:text-white transition-colors" aria-label="Close">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </form>
+        </div>
+        <div class="p-6 text-slate-300 space-y-4 max-h-[60vh] overflow-y-auto">
+            <p>Welcome to NexasWorks. By engaging with our digital web agency services, you agree to comply with and be bound by the following terms and conditions of use.</p>
+            <h3 class="text-lg font-semibold text-white mt-4">1. Scope of Services</h3>
+            <p>NexasWorks provides custom web design, development, and digital marketing services. The specific scope, deliverables, and timelines will be detailed in a separate project proposal or statement of work.</p>
+            <h3 class="text-lg font-semibold text-white mt-4">2. Client Obligations</h3>
+            <p>The client agrees to provide all necessary assets, content, and feedback in a timely manner. Delays in providing materials may result in project timeline extensions.</p>
+            <h3 class="text-lg font-semibold text-white mt-4">3. Intellectual Property</h3>
+            <p>Upon final payment, the intellectual property rights of the custom-developed website will transfer to the client, excluding any third-party tools, plugins, or pre-existing proprietary code used by NexasWorks.</p>
+            <h3 class="text-lg font-semibold text-white mt-4">4. Limitation of Liability</h3>
+            <p>NexasWorks shall not be liable for any indirect, special, or consequential damages arising out of the use or inability to use the delivered digital products.</p>
+        </div>
+        <div class="p-6 border-t border-dark-border bg-dark-bg/50 rounded-b-2xl flex justify-end">
+            <form method="dialog">
+                <button type="submit" class="bg-slate-700 hover:bg-slate-600 text-white px-6 py-2 rounded-lg font-medium transition-colors">I Understand</button>
+            </form>
+        </div>
+    </dialog>
+
+    <!-- Privacy Policy Modal -->
+    <dialog id="privacy-modal" closedby="any" aria-labelledby="privacy-title" class="bg-dark-card border border-dark-border rounded-2xl shadow-2xl p-0 max-w-2xl m-auto">
+        <div class="p-6 border-b border-dark-border flex justify-between items-center sticky top-0 bg-dark-card rounded-t-2xl z-10">
+            <h2 id="privacy-title" class="text-2xl font-bold text-white">Privacy Policy</h2>
+            <form method="dialog">
+                <button type="submit" class="text-slate-400 hover:text-white transition-colors" aria-label="Close">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </form>
+        </div>
+        <div class="p-6 text-slate-300 space-y-4 max-h-[60vh] overflow-y-auto">
+            <p>At NexasWorks, we are committed to protecting your privacy and ensuring the security of your personal data.</p>
+            <h3 class="text-lg font-semibold text-white mt-4">1. Information We Collect</h3>
+            <p>We may collect personal information such as your name, email address (e.g., when contacting atharvchaulkar2005@gmail.com), and business details when you request our services or communicate with us.</p>
+            <h3 class="text-lg font-semibold text-white mt-4">2. How We Use Your Data</h3>
+            <p>Your information is used strictly to provide and improve our web development services, process payments, and communicate project updates. We do not sell your data to third parties.</p>
+            <h3 class="text-lg font-semibold text-white mt-4">3. Data Security</h3>
+            <p>We implement industry-standard security measures to protect against unauthorized access, alteration, disclosure, or destruction of your personal information.</p>
+            <h3 class="text-lg font-semibold text-white mt-4">4. Third-Party Services</h3>
+            <p>We may employ third-party companies and individuals to facilitate our services (e.g., hosting, analytics). These third parties have access to your Personal Data only to perform these tasks on our behalf.</p>
+        </div>
+        <div class="p-6 border-t border-dark-border bg-dark-bg/50 rounded-b-2xl flex justify-end">
+            <form method="dialog">
+                <button type="submit" class="bg-slate-700 hover:bg-slate-600 text-white px-6 py-2 rounded-lg font-medium transition-colors">I Understand</button>
+            </form>
+        </div>
+    </dialog>
+
+    <!-- Refund & Cancellation Policy Modal -->
+    <dialog id="refund-modal" closedby="any" aria-labelledby="refund-title" class="bg-dark-card border border-dark-border rounded-2xl shadow-2xl p-0 max-w-2xl m-auto">
+        <div class="p-6 border-b border-dark-border flex justify-between items-center sticky top-0 bg-dark-card rounded-t-2xl z-10">
+            <h2 id="refund-title" class="text-2xl font-bold text-white text-left">Refund & Cancellation Policy</h2>
+            <form method="dialog">
+                <button type="submit" class="text-slate-400 hover:text-white transition-colors" aria-label="Close">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </form>
+        </div>
+        <div class="p-6 text-slate-300 space-y-4 max-h-[60vh] overflow-y-auto">
+            <div class="bg-brand-900/30 border-l-4 border-brand-500 p-4 rounded mb-6 text-white font-medium">
+                Refunds are only processed before the project commences, and no refunds are issued for completed web development milestones.
+            </div>
+            <p>NexasWorks strives to deliver the highest quality web solutions. Due to the custom nature of our digital services, our refund policy is strictly structured as follows:</p>
+            <h3 class="text-lg font-semibold text-white mt-4">1. Project Cancellation</h3>
+            <p>If you choose to cancel your project before any actual design or development work has commenced, we will issue a full refund of any deposits paid, minus any transaction fees.</p>
+            <h3 class="text-lg font-semibold text-white mt-4">2. Milestone Completions</h3>
+            <p>Web development projects are often divided into milestones. Once a milestone has been completed and approved by the client, the payment for that milestone becomes non-refundable. No refunds are issued for completed web development milestones.</p>
+            <h3 class="text-lg font-semibold text-white mt-4">3. Terminated Projects</h3>
+            <p>In the event that a project is terminated midway, NexasWorks retains the right to bill for the hours worked or milestones completed up to the point of cancellation. Any surplus from the deposit will be refunded.</p>
+        </div>
+        <div class="p-6 border-t border-dark-border bg-dark-bg/50 rounded-b-2xl flex justify-end">
+            <form method="dialog">
+                <button type="submit" class="bg-slate-700 hover:bg-slate-600 text-white px-6 py-2 rounded-lg font-medium transition-colors">I Understand</button>
+            </form>
+        </div>
+    </dialog>
+
+    <script>
+        // Fallback for browsers without closedby support
+        const dialogs = document.querySelectorAll('dialog');
+        
+        if (!('closedBy' in HTMLDialogElement.prototype)) {
+            dialogs.forEach(dialog => {
+                dialog.addEventListener('click', (event) => {
+                    // Ignore clicks where the target is a child element inside the dialog.
+                    if (event.target !== dialog) return;
+
+                    const rect = dialog.getBoundingClientRect();
+                    const isDialogContent = (
+                        rect.top <= event.clientY &&
+                        event.clientY <= rect.top + rect.height &&
+                        rect.left <= event.clientX &&
+                        event.clientX <= rect.left + rect.width
+                    );
+
+                    if (isDialogContent) return;
+
+                    // Click was outside the content area (on the backdrop), close the dialog.
+                    dialog.close();
+                });
+            });
+        }
+
+        // Scroll Reveal Animations
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
+            
+            // Automatically add reveal classes to other main elements
+            const selectors = [
+                '#work .text-center', '#work .group',
+                '#services .text-center', '#services .group',
+                '.bg-brand-900 .max-w-4xl'
+            ];
+            
+            document.querySelectorAll(selectors.join(', ')).forEach((el, index) => {
+                if(el.tagName === 'DIALOG' || el.closest('dialog')) return;
+                if (!el.classList.contains('reveal')) {
+                    el.classList.add('reveal');
+                    // Stagger grids
+                    if (el.closest('.grid')) {
+                        let i = Array.from(el.parentNode.children).indexOf(el);
+                        if (i % 3 === 1) el.classList.add('reveal-delay-1');
+                        if (i % 3 === 2) el.classList.add('reveal-delay-2');
+                    }
+                }
+            });
+
+            // Make sure Hero triggers on load even if observer is slightly delayed
+            setTimeout(() => {
+                document.querySelectorAll('.reveal').forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if(rect.top < window.innerHeight) el.classList.add('active');
+                });
+            }, 50);
+
+            // Observe all elements with .reveal
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
+    </script>
+
+</body>
+</html>
